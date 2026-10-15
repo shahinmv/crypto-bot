@@ -1,7 +1,8 @@
+import os
 import time
 import requests
 def get_price():
-    test = requests.get("https://api.nomics.com/v1/currencies/ticker?key=d3819573b287c9d72d7525619619338b2a2ecf92&ids=BTC,ETH,XRP&interval=1d,30d&convert=USD&per-page=100&page=1")
+    test = requests.get("https://api.nomics.com/v1/currencies/ticker?key=" + os.environ["NOMICS_API_KEY"] + "&ids=BTC,ETH,XRP&interval=1d,30d&convert=USD&per-page=100&page=1")
 
     data = test.json()
 
